@@ -2,9 +2,9 @@
 
 namespace COMP003.Assigment5.Data
 {
-    public class ClassicMovies
+    public class MovieStore
     {
-        public static List<Movie> Movies { get; } = new()
+        public static List<Movie> Movies { get; set; } = new()
         {
             new Movie {Id =1, Title = "Friday", Rating = 9.8m, ReleaseDate = new DateTime(4, 28, 1995) },
             new Movie {Id =2, Title = "Next Friday", Rating = 9.9m, ReleaseDate = new DateTime(1, 12, 2000) },
