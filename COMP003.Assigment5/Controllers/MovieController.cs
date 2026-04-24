@@ -1,4 +1,5 @@
-﻿using COMP003.Assigment5.Data;
+﻿using COMP003.Assigment5.Models;
+using COMP003.Assigment5.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace COMP003.Assigment5.Controllers
@@ -30,11 +31,11 @@ namespace COMP003.Assigment5.Controllers
             movie.Id = MovieStore.Movies.Max(x => x.Id) + 1;
             MovieStore.Movies.Add(movie);
 
-            return CreatedAtAction(nameof(GetMovie), new { id = movie.id }, movie);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateMovie(int id, MovieController updatedMovie)
+        public IActionResult UpdateMovie(int id, Movie updatedMovie)
         {
             if (id != updatedMovie.Id)
                 return BadRequest();
